@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# columns date format like 2017-10-15 12:30:46,000
+# columns date format like: 2017-10-15 12:30:46,000
+# in jupyter notebook run like: %run date_convert.py
 
 import pandas as pd
 
