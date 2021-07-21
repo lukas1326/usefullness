@@ -1,0 +1,5 @@
+jupyter nbconvert Robson_classification_commented-Copy1.ipynb --no-input
+ --to html --no-prompt
+
+
+if error --to pdf, install https://miktex.org/download
