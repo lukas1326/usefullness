@@ -1,0 +1,16 @@
+Date = 
+VAR MinYear = YEAR ( MIN ( 'Запрос1'[Дата создания] ) )
+VAR MaxYear = YEAR ( MAX ( 'Запрос1'[Дата создания] ) )
+RETURN
+ADDCOLUMNS ( 
+    FILTER ( 
+        CALENDARAUTO( ), 
+        AND ( YEAR ( [Date] ) >= MinYear, [Date]  < TODAY() )
+    ),
+    "Calendar Year",  YEAR ( [Date] ),
+    "Month Name", FORMAT ( [Date], "mmmm" ),
+    "Month Number", MONTH ( [Date] ),
+    "Weekday", FORMAT ( [Date], "dddd" ),
+    "Weekday number", WEEKDAY( [Date],2 ),
+    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 3 ) + 1
+)
